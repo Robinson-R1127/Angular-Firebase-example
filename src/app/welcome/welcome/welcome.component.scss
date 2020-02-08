@@ -1,8 +1,9 @@
+// 全体を囲む為のclass
 .wrap {
   text-align: center;
   padding: 24px;
 }
-
+// "max-width: 100%"はどの画面にも適用させたいのでstyle.cssに記入
 img {
   display: block;
 }
