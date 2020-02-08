@@ -6,6 +6,12 @@ const routes: Routes = [
     path: 'welcome',
     loadChildren: () =>
       import('./welcome/welcome.module').then(m => m.WelcomeModule)
+  },
+
+  {
+    path: 'create',
+    loadChildren: () =>
+      import('./create/create.module').then(m => m.CreateModule)
   }
 ];
 
