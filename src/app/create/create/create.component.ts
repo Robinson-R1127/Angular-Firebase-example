@@ -31,5 +31,6 @@ export class CreateComponent implements OnInit {
 
   submit() {
     console.log(this.form.value);
+    console.log(this.selectedPetId);
   }
 }
