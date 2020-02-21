@@ -2,5 +2,8 @@
 
 <!-- どの画面にも差し変わらないのでここに記入 -->
 <footer>
+  <button *ngIf="user$ | async" mat-button (click)="logout()">
+    ログアウト
+  </button>
   <p>&copy; GitPet</p>
 </footer>
