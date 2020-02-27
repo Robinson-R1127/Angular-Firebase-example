@@ -35,6 +35,7 @@ export class GuestGuard implements CanActivate, CanLoad {
       })
     );
   }
+
   canLoad(
     route: Route,
     segments: UrlSegment[]
