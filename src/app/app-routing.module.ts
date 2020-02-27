@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
+import { GuestGuard } from './guards/guest.guard';
+import { NotFoundComponent } from './not-found/not-found.component';
 // どのpathでどのmoduleにいきたいか
 const routes: Routes = [
   {
@@ -14,7 +16,9 @@ const routes: Routes = [
   {
     path: 'welcome',
     loadChildren: () =>
-      import('./welcome/welcome.module').then(m => m.WelcomeModule)
+      import('./welcome/welcome.module').then(m => m.WelcomeModule),
+    canLoad: [GuestGuard],
+    canActivate: [GuestGuard]
   },
 
   {
@@ -23,6 +27,11 @@ const routes: Routes = [
       import('./create/create.module').then(m => m.CreateModule),
     canLoad: [AuthGuard],
     canActivate: [AuthGuard]
+  },
+
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 
