@@ -10,6 +10,7 @@ export class PetComponent implements OnInit {
   @Input() pet: Pet;
 
   maxExp = 400;
+
   constructor() {}
 
   ngOnInit() {}
