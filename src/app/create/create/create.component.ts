@@ -41,6 +41,15 @@ export class CreateComponent implements OnInit {
 
   submit() {
     const formData = this.form.value;
+    console.log({
+      name: formData.name,
+      gender: formData.gender,
+      petImageId: this.selectedPetId,
+      level: 1,
+      exp: 0,
+      trainerId: this.authService.uid,
+      ownerGitHubId: this.authService.gitHubId
+    });
     this.petService.createPet({
       name: formData.name,
       gender: formData.gender,

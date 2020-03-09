@@ -19,7 +19,6 @@ export class AuthService {
     private snackBar: MatSnackBar
   ) {
     this.afUser$.subscribe(user => {
-      this.gitHubId = +user.providerData[0].uid;
       this.uid = user && user.uid;
     });
   }
